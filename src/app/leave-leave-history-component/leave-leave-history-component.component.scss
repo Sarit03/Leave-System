@@ -1,0 +1,92 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;  /* เปลี่ยนจากแถว (row) เป็นคอลัมน์ (column) */
+    gap: 20px;
+    margin-bottom: 20px;
+  
+    .form-group {
+      display: flex;
+      flex-direction: column; /* ให้ฟอร์มกรอกข้อมูลอยู่ในคอลัมน์เดียวกัน */
+      gap: 10px;
+      width: 100%; /* ฟอร์มขยายเต็มพื้นที่ */
+    }
+
+    .leave-request-form1 h1 {
+        font-size: 24px; /* ปรับขนาดฟอนต์ให้เล็กลง */
+        color: #007bff; /* เปลี่ยนสีของข้อความหากต้องการ */
+        margin-bottom: 20px; /* เพิ่มระยะห่างจากด้านล่าง */
+      }
+      
+  
+    label {
+      font-size: 16px;
+      color: #007bff; /* สีของ label */
+    }
+  }
+  
+  .leave-request-form1 h1 {
+    font-size: 24px;  /* ปรับขนาดฟอนต์ให้เล็กลง */
+    font-family: 'Arial', sans-serif;  /* ใช้ฟอนต์ธรรมดา */
+    margin-bottom: 10px;  /* ลดระยะห่างระหว่าง h1 และ h2 */
+  }
+  
+  .leave-request-form1 h2 {
+    font-size: 14px;  /* ปรับขนาดฟอนต์ให้เล็กลง */
+    font-weight: normal;  /* ทำให้ข้อความไม่หนา */
+    font-family: 'Arial', sans-serif;  /* ใช้ฟอนต์ธรรมดา */
+    margin-bottom: 20px;  /* ลดระยะห่างจากด้านล่าง */
+
+  }
+  
+  button {
+    padding: 12px 25px; /* ขนาดปุ่ม */
+    background-color: #007bff; /* สีพื้นหลังปุ่ม (น้ำเงิน) */
+    color: white; /* สีข้อความในปุ่ม */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    border: none;
+    border-radius: 5px; /* มุมมน */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* เอฟเฟ็กต์เวลา hover */
+  
+    &:hover {
+      background-color: #0056b3; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+      transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อ hover */
+    }
+  
+    &:active {
+      background-color: #003d80; /* เปลี่ยนสีพื้นหลังเมื่อกด */
+      transform: scale(0.98); /* ย่อขนาดปุ่มเล็กน้อยเมื่อกด */
+    }
+  
+    &:disabled {
+      background-color: #b0bec5; /* สีพื้นหลังปุ่มที่ปิดการใช้งาน */
+      color: #8d8d8d; /* สีข้อความปุ่มที่ปิดการใช้งาน */
+      cursor: not-allowed;
+    }
+  }
+
+  .leave-request-form1 {
+    margin-top: 20%;
+    width: 100%;
+
+    margin: 0 auto;
+    max-width: 95%;
+    padding: 20px;
+    background-color: #f4f8fb; /* พื้นหลังสีอ่อนกว่าเดิม */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเล็กน้อย */
+    font-family: Arial, sans-serif; /* เลือกฟอนต์อ่านง่าย */
+  }
+  
+  
+  .leave-request-form {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f8fb; /* พื้นหลังสีอ่อนกว่าเดิม */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเล็กน้อย */
+    font-family: Arial, sans-serif; /* เลือกฟอนต์อ่านง่าย */
+  }
+  

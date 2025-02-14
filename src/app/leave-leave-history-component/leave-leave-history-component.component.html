@@ -1,0 +1,75 @@
+<app-navbarmaster></app-navbarmaster>
+
+<div class="leave-statistics-container">
+  <div class="leave-request-form1">
+    <h1>สถิติการลาประจำเดือน</h1>
+    <h2>ข้อมูลการลาของพนักงานทั้งหมด</h2>
+  </div>
+
+  <div class="leave-request-form">
+    <!-- ฟอร์มเลือกเดือนและปี -->
+    <div class="filter-container">
+      <div class="form-group">
+        <label for="month">เลือกเดือน</label>
+        <select id="month">
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="year">เลือกปี</label>
+        <select id="year">
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+    </div>
+    <button (click)="loadLeaveData()">โหลดข้อมูล</button>
+  </div>
+
+  <!-- กราฟแสดงข้อมูลการลา -->
+  <div class="leave-chart">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>สรุปการลาตามประเภท</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <canvas id="leaveChart"></canvas> <!-- กราฟจะแสดงที่นี่ -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- ตารางการลา -->
+  <div class="leave-table">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>รายละเอียดการลาของแต่ละคน</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="leaveData">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> ชื่อ-นามสกุล </th>
+            <td mat-cell *matCellDef="let leave"> {{ leave.name }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef> แผนก </th>
+            <td mat-cell *matCellDef="let leave"> {{ leave.department }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="leaveType">
+            <th mat-header-cell *matHeaderCellDef> ประเภทการลา </th>
+            <td mat-cell *matCellDef="let leave"> {{ leave.leaveType }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="days">
+            <th mat-header-cell *matHeaderCellDef> จำนวนวัน </th>
+            <td mat-cell *matCellDef="let leave"> {{ leave.days }} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

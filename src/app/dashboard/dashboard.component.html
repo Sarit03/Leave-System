@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+    <div class="status-cards">
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title>วันลาคงเหลือ</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>10 วัน</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title>ลาที่รออนุมัติ</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>2 รายการ</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="status-card">
+        <mat-card-header>
+          <mat-card-title>ลาทั้งหมด</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>15 วัน</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">รายการลาล่าสุด</h1>
+      
+        <mat-card class="table-card">
+          <table mat-table [dataSource]="leaveRequests">
+            <!-- วันที่ -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> วันที่ </th>
+              <td mat-cell *matCellDef="let request">{{ request.date }}</td>
+            </ng-container>
+      
+            <!-- ประเภทการลา -->
+            <ng-container matColumnDef="leaveType">
+              <th mat-header-cell *matHeaderCellDef> ประเภทการลา </th>
+              <td mat-cell *matCellDef="let request">{{ request.leaveType }}</td>
+            </ng-container>
+      
+            <!-- จำนวนวัน -->
+            <ng-container matColumnDef="days">
+              <th mat-header-cell *matHeaderCellDef> จำนวนวัน </th>
+              <td mat-cell *matCellDef="let request">{{ request.days }}</td>
+            </ng-container>
+      
+            <!-- สถานะ -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> สถานะ </th>
+              <td mat-cell *matCellDef="let request">
+                <span [ngClass]="{'approved': request.status === 'อนุมัติแล้ว', 'pending': request.status === 'รออนุมัติ'}">
+                  {{ request.status }}
+                </span>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </mat-card>
+      </div>
+  </div>
+  

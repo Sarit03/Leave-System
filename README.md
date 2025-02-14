@@ -1,27 +1,85 @@
-# LeaveSystem
+ระบบลาจัดการนี้พัฒนาโดยใช้เทคโนโลยี Angular และ Spring Boot ซึ่งช่วยให้ผู้จัดการและพนักงานสามารถจัดการการลาของพนักงานได้อย่างมีประสิทธิภาพ ตัวระบบสามารถ:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.14.
+ขอลาพักลาหรือประเภทการลาอื่นๆ
+ติดตามการขอลา
+อนุมัติหรือไม่อนุมัติการลา
+ดูสถิติการลา
+ดูประวัติการลา
+แสดงข้อมูลการลาทั้งหมด
+ฟังก์ชันการส่งออกข้อมูลเป็นไฟล์ Excel
+เทคโนโลยีที่ใช้
+Frontend:
+Angular 18
+Angular Material
+RxJS
+NgRx (สำหรับการจัดการสถานะ)
+Backend:
+Spring Boot 3.3
+Spring Security
+Spring Data JPA
+Java 17
+Database:
+PostgreSQL
+ฟีเจอร์หลัก
+หน้าแดชบอร์ด:
 
-## Development server
+แสดงสถิติการลา เช่น จำนวนวันลาคงเหลือ, จำนวนคำขอลาที่รออนุมัติ, จำนวนวันลาที่ใช้ไปทั้งหมดในปีนี้
+แสดงรายการขอลาล่าสุด
+ปฏิทินแสดงวันลาในเดือนปัจจุบัน
+หน้าขอลางาน:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ฟอร์มสำหรับเลือกประเภทการลา (ลาพักร้อน, ลาป่วย, ลากิจ)
+ระบุวันที่เริ่มต้นและวันที่สิ้นสุดของการลา
+ระบุเหตุผลการลา
+ปุ่มส่งคำขอลา
+หน้าประวัติการลา:
 
-## Code scaffolding
+แสดงรายการประวัติการลาทั้งหมด
+ฟิลเตอร์ตามประเภทการลาและสถานะ
+หน้าสถิติการลา:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+แสดงกราฟการลาตามประเภทการลา
+ฟิลเตอร์ตามเดือนและปี
+แสดงรายละเอียดการลาของพนักงาน
+หน้ารายการขออนุมัติการลา (สำหรับผู้จัดการ):
 
-## Build
+รายการคำขอลาที่รออนุมัติ
+ปุ่มอนุมัติหรือไม่อนุมัติ
+ฟิลด์สำหรับเพิ่มความคิดเห็น
+ฟีเจอร์เสริม:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+รองรับการใช้งานบนหน้าจอขนาดต่างๆ
+โหมดมืด
+การส่งออกข้อมูลเป็นไฟล์ Excel
+การติดตั้ง
+ขั้นตอนการติดตั้ง Backend (Spring Boot)
+ดาวน์โหลดโค้ดจาก repository
+ตั้งค่า PostgreSQL และสร้างฐานข้อมูล
+ตั้งค่าการเชื่อมต่อฐานข้อมูลในไฟล์ application.properties
+รันโปรเจกต์ด้วยคำสั่ง:
+bash
+คัดลอก
+mvn spring-boot:run
+ขั้นตอนการติดตั้ง Frontend (Angular)
+ดาวน์โหลดโค้ดจาก repository
+ติดตั้ง dependencies ด้วยคำสั่ง:
+bash
+คัดลอก
+npm install
+รันโปรเจกต์ Angular ด้วยคำสั่ง:
+bash
+คัดลอก
+ng serve
+การใช้งาน
+เข้าสู่ระบบ (ไม่มีระบบการล็อกอิน ระบบจะให้เลือกบทบาทระหว่างผู้จัดการและพนักงาน)
+ผู้จัดการสามารถอนุมัติหรือไม่อนุมัติคำขอลา
+พนักงานสามารถขอลาและตรวจสอบประวัติการลาได้
+การส่งออกข้อมูล
+สามารถส่งออกข้อมูลการลาเป็นไฟล์ Excel สำหรับสถิติการลาในระบบ
 
-## Running unit tests
+สถาปัตยกรรม
+ระบบนี้ใช้ Frontend ที่พัฒนาโดย Angular ซึ่งเชื่อมต่อกับ Backend ที่พัฒนาโดย Spring Boot และฐานข้อมูล PostgreSQL สำหรับจัดเก็บข้อมูลการลา.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+การพัฒนา
+ระบบมีการออกแบบที่ยืดหยุ่นและรองรับการพัฒนาฟีเจอร์เพิ่มเติม
+ฟังก์ชันใหม่ๆ เช่น การเพิ่มฟีเจอร์การแจ้งเตือน หรือการแสดงข้อมูลในรูปแบบอื่นๆ สามารถพัฒนาเพิ่มเติมได้ตามความต้องการ

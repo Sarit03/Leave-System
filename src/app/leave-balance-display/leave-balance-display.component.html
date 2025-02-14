@@ -1,0 +1,29 @@
+<app-navbarmaster></app-navbarmaster>
+
+<div class="leave-requests">
+    <h2>รายการขออนุมัติการลา</h2>
+    <p>รายการที่รอการอนุมัติทั้งหมด {{ leaveRequests.length }} รายการ</p>
+
+    <div class="leave-card" *ngFor="let request of leaveRequests">
+        <div class="leave-header">
+            <strong>{{ request.name }}</strong>
+            <span class="department">{{ request.department }}</span>
+            <span class="status" [ngClass]="{'pending': request.status === 'รออนุมัติ'}">{{ request.status }}</span>
+        </div>
+        <div class="leave-details">
+            <p><strong>ประเภทการลา:</strong> {{ request.leaveType }}</p>
+            <p><strong>จำนวนวัน:</strong> {{ request.days }} วัน</p>
+            <p><strong>วันที่เริ่มต้น:</strong> {{ request.startDate }}</p>
+            <p><strong>วันที่สิ้นสุด:</strong> {{ request.endDate }}</p>
+            <p><strong>เหตุผลการลา:</strong> {{ request.reason }}</p>
+        </div>
+        <div class="comments">
+            <label>ความคิดเห็น:</label>
+            <textarea [(ngModel)]="request.comment" placeholder="เพิ่มความคิดเห็น (ถ้ามี)"></textarea>
+        </div>
+        <div class="leave-actions">
+            <button class="reject" (click)="rejectRequest(request)">❌ ไม่อนุมัติ</button>
+            <button class="approve" (click)="approveRequest(request)">✔ อนุมัติ</button>
+        </div>
+    </div>
+</div>

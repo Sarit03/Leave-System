@@ -1,0 +1,76 @@
+.leave-request-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f8fb; /* พื้นหลังสีอ่อนกว่าเดิม */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเล็กน้อย */
+    font-family: Arial, sans-serif; /* เลือกฟอนต์อ่านง่าย */
+  }
+  
+  .leave-request-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* สีเข้มขึ้น */
+    text-transform: uppercase; /* ตัวอักษรพิมพ์ใหญ่ */
+  }
+  
+  .leave-request-form div {
+    margin-bottom: 20px; /* เพิ่มระยะห่าง */
+  }
+  
+  .leave-request-form label {
+    font-size: 14px;
+    font-weight: 700; /* ทำให้ตัวหนากว่าเดิม */
+    display: block;
+    margin-bottom: 10px;
+    color: #555; /* ใช้สีเทาที่เข้มกว่าเล็กน้อย */
+  }
+  
+  .leave-request-form input,
+  .leave-request-form select,
+  .leave-request-form textarea {
+    width: 100%;
+    padding: 10px; /* เพิ่มความหนาแน่น */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #ffffff; /* สีพื้นหลังขาวล้วน */
+    transition: border-color 0.3s, box-shadow 0.3s; /* เพิ่ม transition */
+  }
+  
+  .leave-request-form input:focus,
+  .leave-request-form select:focus,
+  .leave-request-form textarea:focus {
+    border-color: #007BFF; /* เปลี่ยนสีขอบเมื่อ focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* เพิ่มเงาเมื่อ focus */
+  }
+  
+  .leave-request-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* เพิ่ม transition */
+  }
+  
+  .leave-request-form button:disabled {
+    background-color: #bbb; /* สีอ่อนลงเมื่อปิดการใช้งาน */
+    cursor: not-allowed;
+  }
+  
+  .leave-request-form button:hover {
+    background-color: #0056b3; /* สีเข้มขึ้นเมื่อ hover */
+  }
+  
+  .leave-request-form button:active {
+    transform: scale(0.98); /* ลดขนาดเล็กน้อยเมื่อคลิก */
+  }
+  

@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+    &:active {
+      background-color: #003d80;
+      transform: scale(0.98);
+    }
+  }
+  
+  button:disabled {
+    background-color: #b0bec5;
+    color: #8d8d8d;
+    cursor: not-allowed;
+  }
+
+  
+  

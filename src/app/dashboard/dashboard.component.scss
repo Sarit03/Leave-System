@@ -1,0 +1,91 @@
+ /* Container for the status cards */
+  .dashboard-container {
+    padding: 80px 20px 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    
+    
+  }
+  
+  .status-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .status-card {
+    width: 30%;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+  }
+  
+  mat-card-content {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  /* Container สำหรับปุ่ม */
+.button-container {
+    display: flex;
+    justify-content: center;  /* จัดปุ่มให้อยู่กลาง */
+    gap: 20px;  /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 50px;  /* ระยะห่างจากขอบด้านบน */
+  }
+
+  /* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ */
+  button:hover {
+    background-color: white;
+    color: #4CAF50;
+    border-color: #4CAF50;
+    transform: scale(1.05);  /* เพิ่มขนาดของปุ่มเมื่อชี้ */
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+    &:active {
+      background-color: #003d80;
+      transform: scale(0.98);
+    }
+  }
+  
+  button:disabled {
+    background-color: #b0bec5;
+    color: #8d8d8d;
+    cursor: not-allowed;
+  }
+
+  
+  

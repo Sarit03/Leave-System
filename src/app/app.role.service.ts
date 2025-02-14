@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RoleService {
+  private roleSubject = new BehaviorSubject<string>('employee'); // ค่าเริ่มต้น
+  role$ = this.roleSubject.asObservable();
+
+  setRole(role: string) {
+    this.roleSubject.next(role);
+  }
+}

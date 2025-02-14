@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="leave-request-form">
+    <h2>แบบฟอร์มขอลางาน</h2>
+    <form [formGroup]="leaveRequestForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="leaveType">ประเภทการลา</label>
+        <select id="leaveType" formControlName="leaveType">
+          <option value="sick">เลือกประเภทการลา</option>
+          <option value="vacation">ลาป่วย</option>
+          <option value="vacation">ลาพักร้อน</option>
+          <option value="personal">ลากิจ</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="startDate">วันที่เริ่มต้น</label>
+        <input type="date" id="startDate" formControlName="startDate" [min]="today" />
+      </div>
+  
+      <div>
+        <label for="endDate">วันที่สิ้นสุด</label>
+        <input type="date" id="endDate" formControlName="endDate" [min]="today" />
+      </div>
+  
+      <div>
+        <label for="reason">เหตุผลการลา</label>
+        <textarea id="reason" formControlName="reason" placeholder="กรุณาระบุเหตุผล"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!leaveRequestForm.valid">ส่งคำขอลา</button>
+    </form>
+</div>
