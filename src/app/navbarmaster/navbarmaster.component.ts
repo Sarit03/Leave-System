@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common'; // เพิ่มการน�
 })
 export class NavbarmasterComponent {
   isLoggedOut = false;  // กำหนดสถานะล็อกเอาท์เป็น false
+  activeTab: number = 0;  // ตัวแปรเก็บแท็บที่เลือก
 
   constructor(private router: Router) {}
 
@@ -29,4 +30,7 @@ export class NavbarmasterComponent {
         this.router.navigate(['/leave-history']);
       }
   
-}
+      setActiveTab(index: number) {
+        this.activeTab = index;
+      }
+    }

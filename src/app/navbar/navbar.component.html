@@ -1,9 +1,16 @@
 <div class="navbar" *ngIf="!isLoggedOut">
   <h1>ระบบลา</h1>
   <div class="button-container">
-    <button (click)="goToDashboard()">เดชบอร์ด</button>
-    <button (click)="goToLeaveRequest()">ขอลา</button>
-    <button >ประวัติการลา</button>
+
     <button (click)="goToHome()">ล็อกเอาท์</button> <!-- ปุ่มล็อกเอาท์ -->
   </div>
+</div>
+
+<div class="content-block">
+  <div class="tabs">
+    <div class="tab" [class.active]="activeTab === 0" (click)="setActiveTab(0)" (click)="goToDashboard()">แดชบอร์ด</div>
+    <div class="tab" [class.active]="activeTab === 1" (click)="setActiveTab(1)" (click)="goToLeaveRequest()">ขอลา</div>
+    <div class="tab" [class.active]="activeTab === 2" (click)="setActiveTab(2)">ประวัติการลา</div>
+  </div>
+  
 </div>

@@ -1,40 +1,87 @@
 .navbar {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .button-container {
-    margin-top: 20px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  
-    &:active {
-      background-color: #003d80;
-      transform: scale(0.98);
-    }
-  }
-  
-  button:disabled {
-    background-color: #b0bec5;
-    color: #8d8d8d;
-    cursor: not-allowed;
-  }
+  background-color: #007bff;
+  color: white;
+  padding: 20px 40px; /* เพิ่ม padding ให้เหมาะสม */
+  display: flex; /* ใช้ flexbox เพื่อจัดการตำแหน่ง */
+  justify-content: space-between; /* จัดตำแหน่งส่วนหัวให้ห่างกัน */
+  align-items: center; /* จัดให้ทุกอย่างอยู่ตรงกลางในแนวตั้ง */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ navbar */
+}
 
-  
-  
+.navbar h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 0 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ปุ่ม */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* ขยายปุ่มเมื่อ hover */
+}
+
+button:active {
+  background-color: #003d80;
+  transform: scale(0.98); /* ลดขนาดปุ่มเมื่อคลิก */
+}
+
+button:disabled {
+  background-color: #b0bec5;
+  color: #8d8d8d;
+  cursor: not-allowed;
+}
+
+/* บล็อกใต้ navbar */
+.content-block {
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin-top: 20px;
+  border: 2px solid #ddd; /* เพิ่มกรอบให้บล็อก */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงาที่ชัดเจนขึ้น */
+  border-radius: 8px;
+  max-width: 80%;
+  margin-left: auto; /* จัดตำแหน่งให้ไปอยู่ตรงกลาง */
+  margin-right: auto; /* จัดตำแหน่งให้ไปอยู่ตรงกลาง */
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-bottom: 2px solid #007bff; /* เส้นขอบด้านล่าง */
+}
+
+.tab {
+  font-size: 18px;
+  color: #007bff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s; /* เพิ่มการเคลื่อนไหว */
+}
+
+.tab:hover {
+  color: #0056b3; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.tab.active {
+  color: #0056b3; /* สีของแท็บที่เลือก */
+  border-bottom: 3px solid #0056b3; /* เส้นใต้ของแท็บที่เลือก */
+}

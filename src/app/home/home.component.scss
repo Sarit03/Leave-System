@@ -1,32 +1,37 @@
 .role-selection {
-    display: flex;
-    justify-content: center; /* จัดกลางในแนวนอน */
-    align-items: center; /* จัดกลางในแนวตั้ง */
-    height: 100vh; /* ให้เต็มหน้าจอ */
-    gap: 20px; /* ระยะห่างระหว่างปุ่ม */
-  }
-  
-  .role-selection button {
-    padding: 15px 30px; /* ขนาดของปุ่ม */
-    font-size: 18px; /* ขนาดตัวอักษร */
-    color: white; /* สีข้อความในปุ่ม */
-    background-color: #007bff; /* สีพื้นหลังของปุ่ม */
-    border: none;
-    border-radius: 5px; /* มุมโค้งมน */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* เอฟเฟ็กต์การเปลี่ยนสีและขยายเมื่อ hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
-  }
-  
-  /* เปลี่ยนสีปุ่มเมื่อ hover */
-  .role-selection button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อ hover */
-  }
-  
-  /* เปลี่ยนสีปุ่มเมื่อคลิก */
-  .role-selection button:active {
-    background-color: #003d80;
-    transform: scale(0.98); /* ย่อขนาดปุ่มเล็กน้อยเมื่อคลิก */
-  }
-      
+  display: flex;
+  flex-direction: column; /* แสดงองค์ประกอบในแนวตั้ง */
+  justify-content: center; /* จัดกลางในแนวนอน */
+  align-items: center; /* จัดกลางในแนวตั้ง */
+  height: 100vh; /* ให้เต็มหน้าจอ */
+  gap: 20px; /* ระยะห่างระหว่าง h1 และปุ่ม */
+}
+
+.role-selection h1 {
+  font-size: 2rem; /* ขนาดตัวอักษรที่เหมาะสม */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  color: #333; /* สีของข้อความ */
+  margin-bottom: 20px; /* ระยะห่างจากปุ่ม */
+}
+
+.role-selection button {
+  padding: 15px 30px; /* ขนาดของปุ่ม */
+  font-size: 18px; /* ขนาดตัวอักษร */
+  color: white; /* สีข้อความในปุ่ม */
+  background-color: #007bff; /* สีพื้นหลังของปุ่ม */
+  border: none;
+  border-radius: 5px; /* มุมโค้งมน */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* เอฟเฟ็กต์การเปลี่ยนสีและขยายเมื่อ hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+.role-selection button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อ hover */
+}
+
+.role-selection button:active {
+  background-color: #003d80;
+  transform: scale(0.98); /* ย่อขนาดปุ่มเล็กน้อยเมื่อคลิก */
+}

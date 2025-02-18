@@ -14,8 +14,8 @@
     styleUrl: './navbar.component.scss'
   })
   export class NavbarComponent {
-    isLoggedOut = false;  // กำหนดสถานะล็อกเอาท์เป็น false
-
+    isLoggedOut = false; 
+    activeTab: number = 0;
     constructor(private router: Router) {}
 
     // ฟังก์ชันสำหรับไปที่หน้า Dashboard
@@ -42,5 +42,9 @@
     // ฟังก์ชันตรวจสอบเส้นทางที่กำลังใช้งาน
     isActive(route: string): boolean {
       return this.router.url === route;
+    }
+
+    setActiveTab(index: number) {
+      this.activeTab = index;
     }
   }

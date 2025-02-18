@@ -1,5 +1,7 @@
 <!-- UI สำหรับเลือกบทบาท -->
+
 <div class="role-selection" *ngIf="!isLoggedIn">
+  <h1>เลือกสถานะที่อยากได้</h1>
   <button (click)="selectRole('manager')">ผู้จัดการ</button>
   <button (click)="selectRole('employee')">พนักงาน</button>
 </div>
